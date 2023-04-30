@@ -1,0 +1,35 @@
+= rendercontent "bulmatown/navbar", class="is-dark"
+  a(class="navbar-item" href="/")
+    = metadata.title
+  a.navbar-item href="/"
+    | Home
+  a.navbar-item href="/posts"
+    | Articles
+  a.navbar-item href="/about"
+    | About
+  .navbar-item.has-dropdown.is-hoverable
+    a.navbar-link href="#"
+      | Topics
+    .navbar-dropdown.is-boxed"
+      a.navbar-item href="https://bulma.io/documentation/overview/start/"
+        | Overview
+      a.navbar-item href="https://bulma.io/documentation/overview/modifiers/"
+        | Modifiers
+      a.class="navbar-item" href="https://bulma.io/documentation/columns/basics/"
+        | Columns
+      a.class="navbar-item" href="https://bulma.io/documentation/layout/container/"
+        | Layout
+      a.class="navbar-item" href="https://bulma.io/documentation/form/general/"
+        | Form
+      hr.navbar-divider
+      a class="navbar-item" href="https://bulma.io/documentation/elements/box/"
+        | Elements
+      a class="navbar-item" href="https://bulma.io/documentation/components/breadcrumb/"
+        | Components
+  .navbar-item.search-item
+    = render "bridgetown_quick_search/search", placeholder: "Search", input_class: "input"
+  a.navbar-item.is-hidden-desktop-only(href="https://twitter.com/#{metadata.twitter}" target="_blank")
+    span.icon
+      i.fa.fa-twitter.is-size-6
+    span.is-hidden-tablet
+      | Twitter

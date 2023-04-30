@@ -1,0 +1,91 @@
+doctype html
+html lang="en"
+  head= render "head", metadata: site.metadata, title: resource.data.title
+  body class="#{resource.data.layout} #{resource.data.page_class}"
+    /= render Shared::Navbar.new(metadata: site.metadata, resource: resource)
+    
+    div.github
+      span#forkongithub
+        a href="https://github.com/owenstrevor/lnscribe-plugin/"
+          | Fork me on GitHub
+    main#main
+      section.container
+        .columns
+          .column.is-1
+          .column
+            header
+              .hero
+                emoji.large ⚡️🍊🍰
+                h1.title.is-spaced
+                  | lnscribe.xyz
+                h2.subtitle
+                  | Backup Lightning Channel State on Bitcoin's Immutable Storage with Inscriptions
+            hr
+            #install
+              h2.title Download
+              .field.has-addons
+                p.control.has-icons-left.is-expanded
+                  input.input.text{value="gh repo clone owenstrevor/lnscribe-plugin" readonly}
+                  span.icon.is-small.is-left
+                    i.fa.fa-dollar
+                p.control
+                  a.button
+                    | Copy
+              .columns
+                .column
+                  | Paste that in a macOS Terminal.
+                .column
+            hr
+            #what-it-does
+              h2.title What Does Lnscribe Do?
+              .columns
+                .column
+                  p
+                    | Lnscribe is a&nbsp;
+                    span.highlight lightningd
+                    | &nbsp;plugin that exports your channel state, encrypts it with your private key, and incribes the output on a Bitcoin block with&nbsp;
+                    span.highlight ord
+                    | . Using the same private key, you can decrypt the data and import it to restore your channel state in the event of loss.
+            hr
+            #how-it-works
+              h2.title How to Inscribe
+              .columns
+                .column
+                  .field.has-addons
+                    p.control.has-icons-left.is-expanded
+                      input.input.text{value="lightningd --mainnet lnscribe.py --inscribe" readonly}
+                      span.icon.is-small.is-left
+                        i.fa.fa-dollar
+                    p.control
+                      a.button
+                        | Copy
+                  p
+                    | Run this command to inscribe your channel state.
+                  h3 style="margin-top:2rem;"
+                    | Prerequisites
+                  ol
+                    li
+                      | Install&nbsp;
+                      span.highlight lightningd
+                    li
+                      | Download lnscribe above
+                    li
+                      | Install&nbsp;
+                      span.highlight ord
+                    li Transfer BTC to your ord wallet for network fees
+            hr
+            #special-thanks
+              h2.title Special Thanks
+              .columns
+                .column
+                  ol
+                    li Kody for forcing me to do the hackathon.
+                    li Super Testnet for helping think through this idea.
+                    li Chris Guida for his tutorial on Writing a Core-Lightning plugin.
+          .column.is-1
+      footer.container
+        .columns
+          .column.is-1
+          .column
+            center Made with 🍰 at Bitcoin++
+          .column.is-1
