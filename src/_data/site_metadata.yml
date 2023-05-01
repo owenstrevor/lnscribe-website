@@ -4,7 +4,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.metadata.myvariable }}.
 
-title: lnscribe ⚡️🍊🍰
+title: Lnscribe ⚡️🍊🍰
 tagline: Backup Lightning Channel State on Bitcoin's Immutable Storage
 email: info@lnscribe.xyz
 description: >-
